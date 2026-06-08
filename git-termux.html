@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OneXportal Mobile Devs Toolkit — Complete Git Reference for Termux & Acode</title>
+  <meta name="description" content="158 Git commands explained for beginners using Termux and Acode on Android.">
+  <meta name="author" content="Amos Isaiah Tizhe — OneXportal">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/scripts.js" defer></script>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+
+      <div class="header-left">
+
+        <div class="logo-box">
+          <img src="img/logo.png" alt="OneXportal Logo" class="logo-img">
+        </div>
+
+        <div class="brand">
+          <div class="brand-text">
+            OneXportal Mobile Devs Toolkit
+          </div>
+
+          <div class="brand-sub">
+            158 commands · Click to copy · Edit to change placeholders
+          </div>
+        </div>
+
+      </div>
+
+      <div class="header-center">
+        <label class="search-wrap">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="search" class="search-input" placeholder="Search commands…" id="searchInput"
+            aria-label="Search commands">
+        </label>
+      </div>
+
+      <div class="header-right">
+
+        <input type="checkbox" id="navToggle" class="nav-toggle-input" hidden>
+        <label for="navToggle" class="nav-toggle-btn" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars"></i>
+          <i class="fa-solid fa-xmark"></i>
+        </label>
+
+        <nav class="header-nav" aria-label="Primary navigation">
+          <a href="termux-ops.html" class="nav-link">Termux</a>
+          <a href="git-termux.html" class="nav-link active">Git</a>
+        </nav>
+
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+
+      <!-- Left Content -->
+      <div class="hero-content">
+
+        <span class="hero-badge">
+          <span class="pulse-dot"></span>
+          Updated for Git 2.45+ · Termux &amp; Acode optimized
+        </span>
+
+        <h1>
+          The complete
+          <span class="gradient">
+            OneXportal Mobile Devs Toolkit
+          </span>
+          for Android developers.
+        </h1>
+
+        <p class="hero-description">
+          Learn Termux, Git, GitHub, Node.js, Acode, SSH, Linux commands,
+          deployment workflows, and real mobile development setups, all optimized for coding directly on Android.
+        </p>
+
+        <!-- CTA -->
+        <div class="hero-actions">
+          <a href="#mainContent" class="hero-btn primary-btn">
+            Browse Commands
+          </a>
+
+          <a href="#cat-setup" class="hero-btn secondary-btn">
+            Setup Guide
+          </a>
+        </div>
+
+        <!-- Stats -->
+        <div class="hero-stats">
+
+          <div class="stat-card">
+            <strong>158 +</strong>
+            <span>Commands</span>
+          </div>
+
+          <div class="stat-card">
+            <strong>100%</strong>
+            <span>Mobile Optimized</span>
+          </div>
+
+          <div class="stat-card">
+            <strong>Git + Termux</strong>
+            <span>Developer Workflows</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Right Side -->
+      <div class="hero-preview">
+
+        <div class="preview-window">
+
+          <div class="preview-topbar">
+            <span style="background: #ff5f56;"></span>
+            <span style="background: #ffbd2e;"></span>
+            <span style="background: #27c93f;"></span>
+          </div>
+
+          <div class="preview-body">
+
+            <pre><code>$ pkg update && pkg upgrade
+
+$ pkg install git nodejs -y
+
+$ git clone git@github.com:YOUR-USERNAME/repo.git
+
+$ cd repo
+
+$ npm install
+
+$ npm run dev
+
+✔ Server running on localhost:3000
+</code></pre>
+
+          </div>
+        </div>
+
+        <!-- Floating cards -->
+        <div class="floating-card floating-1">
+          <i class="fa-brands fa-git-alt"></i>
+          Git Workflows
+        </div>
+
+        <div class="floating-card floating-2">
+          <i class="fa-solid fa-mobile-screen"></i>
+          Android Dev
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Main -->
+  <div class="main-layout">
+    <div class="category-menu" id="categoryMenu">
+      <button type="button" class="category-menu-trigger" id="categoryMenuTrigger" aria-haspopup="true"
+        aria-expanded="false" aria-controls="categoryMenuPanel">
+        <i class="fa-solid fa-list-ul" aria-hidden="true"></i>
+        <span class="category-menu-label">Categories</span>
+        <span class="category-menu-current" id="categoryMenuCurrent">Termux &amp; Acode Setup</span>
+        <i class="fa-solid fa-chevron-down category-menu-caret" aria-hidden="true"></i>
+      </button>
+      <div class="category-menu-panel" id="categoryMenuPanel" role="menu" aria-labelledby="categoryMenuTrigger" hidden>
+        <div class="category-menu-search-wrap">
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+          <input type="search" class="category-menu-search" id="categoryMenuSearch" placeholder="Filter categories…"
+            aria-label="Filter categories">
+        </div>
+        <nav class="sidebar-nav" id="sidebarNav" role="none">
+          <a href="#cat-termux-setup" class="cat-link" data-cat="cat-termux-setup" role="menuitem"><i
+              class="fa-solid fa-mobile-screen-button"></i><span>Termux &amp; Acode Setup</span></a>
+          <a href="#cat-setup" class="cat-link" data-cat="cat-setup" role="menuitem"><i
+              class="fa-solid fa-gear"></i><span>Setup &amp; Config</span></a>
+          <a href="#cat-ssh" class="cat-link" data-cat="cat-ssh" role="menuitem"><i
+              class="fa-solid fa-key"></i><span>SSH Key Setup</span></a>
+          <a href="#cat-start" class="cat-link" data-cat="cat-start" role="menuitem"><i
+              class="fa-solid fa-rocket"></i><span>Create &amp; Clone</span></a>
+          <a href="#cat-stage-commit" class="cat-link" data-cat="cat-stage-commit" role="menuitem"><i
+              class="fa-solid fa-camera"></i><span>Stage &amp; Commit</span></a>
+          <a href="#cat-branch" class="cat-link" data-cat="cat-branch" role="menuitem"><i
+              class="fa-solid fa-code-branch"></i><span>Branches</span></a>
+          <a href="#cat-remote" class="cat-link" data-cat="cat-remote" role="menuitem"><i
+              class="fa-solid fa-cloud"></i><span>Remotes &amp; Sync</span></a>
+          <a href="#cat-merge-rebase" class="cat-link" data-cat="cat-merge-rebase" role="menuitem"><i
+              class="fa-solid fa-code-merge"></i><span>Merge &amp; Rebase</span></a>
+          <a href="#cat-history" class="cat-link" data-cat="cat-history" role="menuitem"><i
+              class="fa-solid fa-magnifying-glass"></i><span>History &amp; Inspect</span></a>
+          <a href="#cat-undo" class="cat-link" data-cat="cat-undo" role="menuitem"><i
+              class="fa-solid fa-rotate-left"></i><span>Undo &amp; Recover</span></a>
+          <a href="#cat-stash" class="cat-link" data-cat="cat-stash" role="menuitem"><i
+              class="fa-solid fa-box-archive"></i><span>Stash</span></a>
+          <a href="#cat-tags" class="cat-link" data-cat="cat-tags" role="menuitem"><i
+              class="fa-solid fa-tag"></i><span>Tags &amp; Releases</span></a>
+          <a href="#cat-gitignore" class="cat-link" data-cat="cat-gitignore" role="menuitem"><i
+              class="fa-solid fa-ban"></i><span>.gitignore Patterns</span></a>
+          <a href="#cat-github" class="cat-link" data-cat="cat-github" role="menuitem"><i
+              class="fa-brands fa-github"></i><span>GitHub Workflows</span></a>
+          <a href="#cat-advanced" class="cat-link" data-cat="cat-advanced" role="menuitem"><i
+              class="fa-solid fa-bolt"></i><span>Advanced</span></a>
+          <a href="#cat-quickref" class="cat-link" data-cat="cat-quickref" role="menuitem"><i
+              class="fa-solid fa-star"></i><span>Quick Reference</span></a>
+        </nav>
+      </div>
+    </div>
+    <main id="mainContent">
+      <!-- Commands will be dynamically rendered here from JSON -->
+    </main>
+    <footer class="footer">
+      <div class="footer-inner">
+        <div>
+          <a href="https://amos-isaiah-tizhe.onrender.com" target="_blank"> <strong>OneXportal</strong> </a>
+          · Built by Amos Isaiah Tizhe · © 2026
+        </div>
+        <div class="footer-links">
+          <a href="https://amos-isaiah-tizhe.onrender.com/#contact" target="_blank"><strong>Support</strong></a>
+          <span>OneXportal Mobile Devs Toolkit · 158 commands</span>
+        </div>
+      </div>
+    </footer>
+    
+</body>
+
+</html>

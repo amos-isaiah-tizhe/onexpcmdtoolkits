@@ -1,0 +1,231 @@
+{
+  "metadata": {
+    "title": "OneXportal Mobile Devs Toolkit — Complete Termux Operations Reference",
+    "description": "Every Termux command you need for web and app development on Android.",
+    "author": "Amos Isaiah Tizhe — OneXportal",
+    "commandCount": 200,
+    "lastUpdated": "2024-2025"
+  },
+  "categories": [
+    {
+      "id": "cat-setup",
+      "title": "Setup & First Steps",
+      "icon": "fa-solid fa-rocket",
+      "description": "The very first commands you run after installing Termux. Get your environment ready for development.",
+      "commands": [
+        {
+          "id": "pkg-update",
+          "title": "Update & upgrade all packages",
+          "code": "pkg update && pkg upgrade -y",
+          "description": "Updates the package list and upgrades everything to the latest version. Run this first on any fresh Termux install.",
+          "howToUse": "Run immediately after installing Termux. Press Enter to keep defaults when prompted.",
+          "whenToUse": "Very first command on a new install, and periodically to keep tools updated and secure.",
+          "tip": "💡 If asked about config file changes during upgrade, press Enter to keep the installed version."
+        },
+        {
+          "id": "setup-storage",
+          "title": "Grant storage permission",
+          "code": "termux-setup-storage",
+          "description": "Requests access to Android's internal storage. Creates ~/storage/ with shortcuts to Downloads, DCIM, Music, etc.",
+          "howToUse": "Run once → tap \"Allow\" in the popup. Access files at ~/storage/shared/ or ~/storage/downloads/",
+          "whenToUse": "Once after fresh install. Required to share files between Termux, Acode, and your file manager."
+        },
+        {
+          "id": "install-toolkit",
+          "title": "Install the full dev toolkit",
+          "code": "pkg install git nodejs python openssh curl wget nano zip unzip -y",
+          "description": "Installs Git, Node.js/npm, Python, SSH, curl, wget, nano, zip, and unzip in one shot. Your complete baseline stack.",
+          "whenToUse": "One-time setup on a fresh Termux. After this you can do web dev, scripting, and version control immediately."
+        },
+        {
+          "id": "create-workspace",
+          "title": "Create your dev workspace",
+          "code": "mkdir -p ~/dev/projects && cd ~/dev/projects",
+          "description": "Creates an organized workspace and navigates into it. All your projects should live here for consistency.",
+          "whenToUse": "After initial Termux setup. Every new project and git clone should land under ~/dev/projects/"
+        },
+        {
+          "id": "termux-info",
+          "title": "Show Termux environment info",
+          "code": "termux-info",
+          "description": "Displays Termux version, Android version, CPU architecture, and installed package count.",
+          "whenToUse": "Troubleshooting, reporting bugs, or verifying your environment before starting a project."
+        },
+        {
+          "id": "list-installed",
+          "title": "List all installed packages",
+          "code": "pkg list-installed",
+          "description": "Lists every package currently installed in your Termux environment with its installed version.",
+          "whenToUse": "Auditing your environment or checking if a specific tool is already installed before reinstalling."
+        }
+      ]
+    },
+    {
+      "id": "cat-pkg",
+      "title": "Package Manager (pkg)",
+      "icon": "fa-solid fa-box",
+      "description": "Install, remove, search, and manage all software in Termux using the pkg command — a friendly wrapper around apt.",
+      "commands": [
+        {
+          "id": "pkg-install",
+          "title": "Install a package",
+          "code": "pkg install package-name -y",
+          "description": "Installs any available package. -y auto-confirms all prompts without interaction.",
+          "howToUse": "Replace package-name: git, nodejs, python, vim, ffmpeg, mariadb, php, etc.",
+          "whenToUse": "Every time you need a new tool, language runtime, or CLI in Termux."
+        },
+        {
+          "id": "pkg-uninstall",
+          "title": "Remove a package",
+          "code": "pkg uninstall package-name",
+          "description": "Removes an installed package from Termux, freeing storage space on your device.",
+          "whenToUse": "When you no longer need a tool — especially useful on phones with limited storage."
+        },
+        {
+          "id": "pkg-search",
+          "title": "Search for a package",
+          "code": "pkg search keyword",
+          "description": "Searches the available package repo for matching names or keywords. Partial names work fine.",
+          "howToUse": "Try: pkg search java  |  pkg search http  |  pkg search image",
+          "whenToUse": "When you don't know the exact package name or want to discover available tools."
+        }
+      ]
+    },
+    {
+      "id": "cat-nav",
+      "title": "Navigation & Folders",
+      "icon": "fa-solid fa-folder-open",
+      "description": "Move around the filesystem and manage directories with professional efficiency.",
+      "commands": [
+        {
+          "id": "cd-home",
+          "title": "Go to home directory",
+          "code": "cd ~",
+          "description": "Returns to Termux home (/data/data/com.termux/files/home). The ~ always refers to home.",
+          "whenToUse": "When lost deep in directories and need to return to your base. Plain \"cd\" works too."
+        },
+        {
+          "id": "ls-detailed",
+          "title": "List files with full details",
+          "code": "ls -lah",
+          "description": "Lists all files including hidden ones, with permissions, human-readable sizes, and timestamps. The most informative listing format.",
+          "howToUse": "ls = simple. ls -la = detailed + hidden. ls -lah = detailed + human sizes. ls -lt = sorted by time.",
+          "whenToUse": "Before any operation on a folder — always check what's actually there first."
+        },
+        {
+          "id": "pwd",
+          "title": "Print current directory path",
+          "code": "pwd",
+          "description": "Prints the full absolute path of your current location. Removes all ambiguity about where you are.",
+          "whenToUse": "Before running any destructive command. Also useful for copying the current path."
+        },
+        {
+          "id": "mkdir-nested",
+          "title": "Create nested project structure",
+          "code": "mkdir -p ~/dev/projects/my-app/{src,public,config,tests,scripts}",
+          "description": "Creates a project folder with multiple subdirectories using brace expansion. One command, full structure.",
+          "whenToUse": "Scaffolding a new project without a framework CLI — create the entire directory tree instantly."
+        },
+        {
+          "id": "rm-rf",
+          "title": "Remove a folder and all contents",
+          "code": "rm -rf folder-name",
+          "description": "Permanently deletes a folder and everything inside it. Irreversible — no recycle bin in Termux.",
+          "howToUse": "Always confirm with pwd and ls first. Never run rm -rf ~ or rm -rf /",
+          "whenToUse": "Deleting node_modules, old build dirs, or entire project folders you no longer need.",
+          "tip": "⚠️ Double-check the name before pressing Enter. This permanently deletes everything inside.",
+          "isDanger": true
+        }
+      ]
+    },
+    {
+      "id": "cat-files",
+      "title": "File Operations",
+      "icon": "fa-solid fa-file",
+      "description": "Create, copy, move, rename, and delete files. The everyday operations you'll run on every project.",
+      "commands": [
+        {
+          "id": "touch",
+          "title": "Create empty files",
+          "code": "touch index.html style.css app.js",
+          "description": "Creates one or more empty files at once. If a file already exists, updates its timestamp without changing content.",
+          "whenToUse": "Starting any new component, config file, or script you'll edit in Acode right after."
+        },
+        {
+          "id": "echo-create",
+          "title": "Create a file with content",
+          "code": "echo \"console.log('Hello World')\" > app.js",
+          "description": "Creates a file and writes text into it. > overwrites. >> appends to an existing file without overwriting.",
+          "howToUse": "echo \"text\" > file — create/overwrite.\necho \"text\" >> file — append a line.",
+          "whenToUse": "Seeding config files, adding lines to .env, or writing a quick script stub from the terminal."
+        },
+        {
+          "id": "cp",
+          "title": "Copy a file or directory",
+          "code": "cp source.js destination.js\ncp -r src/ src-backup/",
+          "description": "Copies files or entire directories. -r is required for directories.",
+          "howToUse": "cp .env.example .env — copy a template to create your local config file.",
+          "whenToUse": "Creating backups, duplicating files, or copying templates before editing."
+        },
+        {
+          "id": "mv",
+          "title": "Move or rename a file",
+          "code": "mv old-name.js new-name.js\nmv component.jsx src/components/",
+          "description": "Moves a file to a new path or renames it. Works for both files and directories.",
+          "whenToUse": "Refactoring project structure, renaming components, or reorganizing files during development."
+        },
+        {
+          "id": "rm",
+          "title": "Delete a file",
+          "code": "rm filename.js\nrm -i filename.js   # with confirmation prompt",
+          "description": "Permanently deletes a file. Cannot be undone — Termux has no recycle bin. Use -i for a confirmation prompt.",
+          "whenToUse": "Removing old files, generated artifacts, or temporary files no longer needed in your project.",
+          "isDanger": true
+        }
+      ]
+    },
+    {
+      "id": "cat-view",
+      "title": "View & Read Files",
+      "icon": "fa-solid fa-eye",
+      "description": "Read file contents, inspect logs, count lines, search text, and check disk usage from the terminal.",
+      "commands": [
+        {
+          "id": "cat",
+          "title": "Print full file contents",
+          "code": "cat filename.js",
+          "description": "Outputs a file's entire contents to the terminal. Best for short files — configs, .env, package.json, .gitignore.",
+          "whenToUse": "Quick checks on small files. For large files use head, tail, or less instead to avoid flooding the terminal."
+        },
+        {
+          "id": "head",
+          "title": "View first N lines",
+          "code": "head -20 server.js",
+          "description": "Shows only the first N lines. Default is 10. Ideal for previewing large files or log headers without loading everything.",
+          "whenToUse": "Checking file structure, import headers, or the first entries of a large log file."
+        },
+        {
+          "id": "tail",
+          "title": "View last N lines + follow mode",
+          "code": "tail -50 app.log\n# Live follow — shows new lines as written:\ntail -f app.log",
+          "description": "Shows the last N lines. -f follows the file in real-time — essential for monitoring live server logs. Press Ctrl+C to stop.",
+          "whenToUse": "Monitoring a running server, reading error logs, or watching a build process output live."
+        },
+        {
+          "id": "grep",
+          "title": "Search text inside files (grep)",
+          "code": "grep -rn \"TODO\" ./src\ngrep -ri \"console.log\" .          # case-insensitive\ngrep -rl \"import React\" .         # filenames only",
+          "description": "Recursively searches all files for a string. -r = recursive, -n = line numbers, -i = case-insensitive, -l = filenames only.",
+          "whenToUse": "Finding all TODOs, tracking function usage, auditing console.logs before a production push."
+        },
+        {
+          "id": "wc",
+          "title": "Count lines / words / bytes",
+          "code": "wc -l filename.js\nwc -l src/*.js   # multiple files with total",
+          "description": "-l counts lines, -w counts words, -c counts bytes. Works on multiple files and shows a grand total.",
+          "whenToUse": "Checking file sizes, counting rows in a dataset, or seeing how large your codebase has grown."
+        }
+      ]
+    }
+  ]
+}
