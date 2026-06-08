@@ -8,6 +8,13 @@
   <meta name="author" content="Amos Isaiah Tizhe — OneXportal">
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png">
   <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#0d1117">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="OneXp Toolkit">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link
@@ -430,7 +437,13 @@
       </div>
     </div>
   </footer>
-
+<div id="install-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0d1117;color:#c9d1d9;padding:12px 16px;font-family:system-ui,sans-serif;font-size:14px;z-index:1000;border-top:1px solid #30363d;align-items:center;justify-content:space-between;gap:12px;">
+  <span>Install OneXP CMD Toolkits for offline access</span>
+  <div style="display:flex;gap:8px;">
+    <button id="install-btn" style="background:#2ea043;color:#fff;border:none;padding:8px 14px;border-radius:6px;font-size:14px;cursor:pointer;font-weight:500;">Install</button>
+    <button id="dismiss-btn" style="background:transparent;color:#8b949e;border:1px solid #30363d;padding:8px 14px;border-radius:6px;font-size:14px;cursor:pointer;">Dismiss</button>
+  </div>
+</div>
   <script>
     // Subtle hover-glow tracking on toolkit cards (progressive enhancement)
     document.querySelectorAll('[data-tilt]').forEach(card => {
@@ -610,5 +623,47 @@
       });
     })();
   </script>
+  <!-- Service Worker Registration for PWA functionality -->
+  <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('/sw.js').catch(console.warn);
+    });
+  }
+</script>
+<!-- PWA Install Prompt Handling -->
+<script>
+let deferredPrompt;
+const banner = document.getElementById('install-banner');
+const installBtn = document.getElementById('install-btn');
+const dismissBtn = document.getElementById('dismiss-btn');
+
+// Don't show if already installed or previously dismissed
+const isDismissed = localStorage.getItem('install-banner-dismissed');
+const isStandalone = window.matchMedia('(display-mode: standalone)').matches || navigator.standalone;
+
+if (!isDismissed && !isStandalone) {
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    banner.style.display = 'flex';
+  });
+}
+
+installBtn.addEventListener('click', async () => {
+  if (!deferredPrompt) return;
+  deferredPrompt.prompt();
+  const { outcome } = await deferredPrompt.userChoice;
+  if (outcome === 'accepted') {
+    banner.style.display = 'none';
+  }
+  deferredPrompt = null;
+});
+
+dismissBtn.addEventListener('click', () => {
+  banner.style.display = 'none';
+  localStorage.setItem('install-banner-dismissed', '1');
+});
+</script>
 </body>
 </html>
