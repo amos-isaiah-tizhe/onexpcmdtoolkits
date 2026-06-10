@@ -1872,6 +1872,216 @@
           ]
         },
         {
+  "id": "clone-a-repository",
+  "title": "Clone a repository",
+  "command": "git clone git@github.com:user/repo.git",
+  "description": "Downloads an existing GitHub repository to your local machine and automatically configures the remote connection. Replace user/repo with the actual repository path. When starting work on an existing project or contributing to someone else's codebase.",
+  "tags": [
+    "git",
+    "termux"
+  ]
+},
+{
+  "id": "clone-into-custom-folder",
+  "title": "Clone into a custom folder",
+  "command": "git clone git@github.com:user/repo.git my-project",
+  "description": "Clones a repository and stores it inside a folder with a custom name instead of the repository name. Replace my-project with your preferred folder name. Useful when organizing multiple projects or avoiding naming conflicts.",
+  "tags": [
+    "git",
+    "termux"
+  ]
+},
+{
+  "id": "clone-specific-branch",
+  "title": "Clone a specific branch",
+  "command": "git clone -b develop git@github.com:user/repo.git",
+  "description": "Clones only the specified branch and checks it out immediately. Replace develop with the branch name you want. Useful when you only need a feature branch or staging branch instead of the default branch.",
+  "tags": [
+    "git",
+    "termux"
+  ]
+},
+{
+  "id": "show-branch-tracking-info",
+  "title": "Show branch tracking info",
+  "command": "git branch -vv",
+  "description": "Displays all local branches along with their upstream tracking branches and ahead/behind status. Helps you see which branches are connected to GitHub and whether they need to be pushed or pulled.",
+  "tags": [
+    "git",
+    "termux"
+  ]
+},
+{
+  "id": "show-current-branch",
+  "title": "Show current branch",
+  "command": "git branch --show-current",
+  "description": "Displays only the name of the branch you're currently working on. Faster than viewing the full branch list when you just need to confirm your current branch.",
+  "tags": [
+    "git",
+    "termux"
+  ]
+},
+{
+  "id": "show-remote-details",
+  "title": "Show remote details",
+  "command": "git remote show origin",
+  "description": "Displays detailed information about the origin remote, including fetch and push URLs, tracked branches, and the default branch. Useful for troubleshooting remote repository connections.",
+  "tags": [
+    "git",
+    "termux"
+  ]
+},
+{
+  "id": "show-remote-branches",
+  "title": "Show remote branches",
+  "command": "git ls-remote --heads origin",
+  "description": "Lists all branches that currently exist on the remote repository without fetching them locally. Useful when checking available branches on GitHub.",
+  "tags": [
+    "git",
+    "termux"
+  ]
+},
+{
+  "id": "show-changed-filenames",
+  "title": "Show changed filenames",
+  "command": "git diff --name-only",
+  "description": "Displays only the names of files that have changed, without showing the actual code differences. Useful for quickly reviewing affected files before committing.",
+  "tags": [
+    "git",
+    "termux"
+  ]
+},
+{
+  "id": "show-staged-filenames",
+  "title": "Show staged filenames",
+  "command": "git diff --cached --name-only",
+  "description": "Lists only the files currently staged for the next commit. Useful for verifying what will be included before running git commit.",
+  "tags": [
+    "git",
+    "termux"
+  ]
+},
+{
+  "id": "show-files-changed-between-branches",
+  "title": "Show files changed between branches",
+  "command": "git diff --name-only main..feature/login",
+  "description": "Displays all files that differ between two branches. Replace the branch names as needed. Useful before merging to see which files will be affected.",
+  "tags": [
+    "git",
+    "termux"
+  ]
+},
+{
+  "id": "restore-file-from-branch",
+  "title": "Restore file from another branch",
+  "command": "git restore --source main path/to/file.txt",
+  "description": "Replaces a file in your current branch with the version from another branch. Replace main and the file path as needed. Useful when you want to recover a file without switching branches.",
+  "tags": [
+    "git",
+    "termux"
+  ]
+},
+{
+  "id": "restore-file-from-commit",
+  "title": "Restore file from a commit",
+  "command": "git restore --source abc1234 path/to/file.txt",
+  "description": "Restores a file exactly as it existed in a specific commit. Replace abc1234 with the commit hash. Useful for recovering an older version of a file without affecting the rest of the project.",
+  "tags": [
+    "git",
+    "termux"
+  ]
+},
+{
+  "id": "create-branch-from-stash",
+  "title": "Create branch from stash",
+  "command": "git stash branch feature-fix stash@{0}",
+  "description": "Creates a new branch and immediately applies a stash to it. This is the safest way to continue stashed work without affecting your current branch.",
+  "tags": [
+    "git",
+    "termux"
+  ]
+},
+{
+  "id": "stash-single-file",
+  "title": "Stash a single file",
+  "command": "git stash push path/to/file.js",
+  "description": "Stashes changes from a specific file instead of the entire working directory. Useful when you only want to temporarily set aside one file while continuing work on others.",
+  "tags": [
+    "git",
+    "termux"
+  ]
+},
+{
+  "id": "git-garbage-collection",
+  "title": "Git garbage collection",
+  "command": "git gc",
+  "description": "Optimizes the repository by cleaning up unnecessary files and compressing Git objects. Helps improve repository performance and reduce storage usage.",
+  "tags": [
+    "git",
+    "termux"
+  ]
+},
+{
+  "id": "verify-repository-integrity",
+  "title": "Verify repository integrity",
+  "command": "git fsck",
+  "description": "Checks the repository for corruption, missing objects, and structural problems. Useful when troubleshooting repository issues or after recovering lost history.",
+  "tags": [
+    "git",
+    "termux"
+  ]
+},
+{
+  "id": "check-why-file-is-ignored",
+  "title": "Check why a file is ignored",
+  "command": "git check-ignore -v filename",
+  "description": "Shows exactly which .gitignore rule is causing a file to be ignored. Useful when Git refuses to track a file and you need to find the matching ignore pattern.",
+  "tags": [
+    "git",
+    "termux"
+  ]
+},
+{
+  "id": "create-status-alias",
+  "title": "Create status alias",
+  "command": "git config --global alias.st status",
+  "description": "Creates a shortcut so you can type 'git st' instead of 'git status'. Useful for speeding up everyday Git workflows.",
+  "tags": [
+    "git",
+    "termux"
+  ]
+},
+{
+  "id": "create-pretty-log-alias",
+  "title": "Create pretty log alias",
+  "command": "git config --global alias.lg \"log --oneline --graph --decorate --all\"",
+  "description": "Creates a shortcut command called 'git lg' that displays a compact visual representation of your repository history with branches and merges.",
+  "tags": [
+    "git",
+    "termux"
+  ]
+},
+{
+  "id": "show-last-commit-files",
+  "title": "Show files changed in last commit",
+  "command": "git show --name-only --oneline HEAD",
+  "description": "Displays the most recent commit along with the files it changed. Useful for quickly reviewing what was included in your last commit.",
+  "tags": [
+    "git",
+    "termux"
+  ]
+},
+{
+  "id": "recover-deleted-branch",
+  "title": "Recover a deleted branch",
+  "command": "git reflog && git branch recovered-branch abc1234",
+  "description": "Uses reflog to find lost commits and recreates a branch pointing to a recovered commit. Replace abc1234 with the commit hash found in reflog. Useful after accidentally deleting a branch.",
+  "tags": [
+    "git",
+    "termux"
+  ]
+},
+        {
           "id": "remove-file-from-all-history",
           "title": "Remove file from all history",
           "command": "git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch path/to/secret-file' HEAD",

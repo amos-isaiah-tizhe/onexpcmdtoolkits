@@ -219,6 +219,188 @@
           "whenToUse": "Finding all TODOs, tracking function usage, auditing console.logs before a production push."
         },
         {
+  "id": "df-storage",
+  "title": "Show storage usage",
+  "code": "df -h",
+  "description": "Displays disk usage for all mounted storage devices in human-readable format.",
+  "whenToUse": "When checking available storage space before installing packages, cloning repositories, or downloading large files."
+},
+{
+  "id": "du-folder-size",
+  "title": "Show folder size",
+  "code": "du -sh folder-name",
+  "description": "Calculates the total size of a directory and all its contents.",
+  "howToUse": "Replace folder-name with the directory you want to inspect.",
+  "whenToUse": "Finding large project folders, caches, node_modules directories, or storage hogs."
+},
+{
+  "id": "find-file",
+  "title": "Find files by name",
+  "code": "find . -name \"*.js\"",
+  "description": "Searches recursively for files matching a pattern.",
+  "howToUse": "Replace *.js with any filename or extension pattern.",
+  "whenToUse": "Locating configuration files, scripts, logs, or assets inside large projects."
+},
+{
+  "id": "which-command",
+  "title": "Locate installed command",
+  "code": "which node",
+  "description": "Shows the full path of an installed command or executable.",
+  "whenToUse": "Verifying installations or determining which executable is being used."
+},
+{
+  "id": "ps-processes",
+  "title": "Show running processes",
+  "code": "ps aux",
+  "description": "Lists all currently running processes with CPU and memory usage.",
+  "whenToUse": "Troubleshooting performance issues or finding background processes."
+},
+{
+  "id": "kill-process",
+  "title": "Stop a running process",
+  "code": "kill PID",
+  "description": "Terminates a running process using its process ID.",
+  "howToUse": "Replace PID with the process number from ps aux.",
+  "whenToUse": "Stopping frozen servers, scripts, or runaway applications.",
+  "isDanger": true
+},
+{
+  "id": "kill-process-force",
+  "title": "Force stop a process",
+  "code": "kill -9 PID",
+  "description": "Immediately terminates a process that refuses to stop normally.",
+  "howToUse": "Replace PID with the process number.",
+  "whenToUse": "Last resort when a process becomes unresponsive.",
+  "tip": "⚠️ Use only when normal kill fails.",
+  "isDanger": true
+},
+{
+  "id": "top",
+  "title": "Monitor system resources",
+  "code": "top",
+  "description": "Displays real-time CPU, memory, and process activity.",
+  "whenToUse": "Diagnosing performance issues or identifying resource-heavy processes."
+},
+{
+  "id": "ping",
+  "title": "Test internet connection",
+  "code": "ping -c 4 google.com",
+  "description": "Sends network requests to verify internet connectivity and response times.",
+  "whenToUse": "Troubleshooting network issues or verifying connectivity."
+},
+{
+  "id": "curl-head",
+  "title": "Check website headers",
+  "code": "curl -I https://example.com",
+  "description": "Retrieves HTTP response headers without downloading the page content.",
+  "whenToUse": "Checking redirects, server status, caching headers, and SSL responses."
+},
+{
+  "id": "download-file",
+  "title": "Download a file",
+  "code": "wget https://example.com/file.zip",
+  "description": "Downloads a file directly from a URL into the current directory.",
+  "whenToUse": "Downloading releases, backups, datasets, or software packages."
+},
+{
+  "id": "download-custom-name",
+  "title": "Download and rename file",
+  "code": "wget -O backup.zip https://example.com/file.zip",
+  "description": "Downloads a file and saves it using a custom filename.",
+  "whenToUse": "When the original filename is long, unclear, or needs standardisation."
+},
+{
+  "id": "zip-folder",
+  "title": "Compress a folder",
+  "code": "zip -r backup.zip project-folder",
+  "description": "Creates a ZIP archive containing a folder and all its contents.",
+  "whenToUse": "Creating backups, sharing projects, or reducing storage usage."
+},
+{
+  "id": "unzip-file",
+  "title": "Extract a ZIP archive",
+  "code": "unzip backup.zip",
+  "description": "Extracts all files from a ZIP archive into the current directory.",
+  "whenToUse": "Opening downloaded archives, backups, or project bundles."
+},
+{
+  "id": "tar-create",
+  "title": "Create tar.gz archive",
+  "code": "tar -czvf backup.tar.gz project-folder",
+  "description": "Creates a compressed tar.gz archive containing a folder and its contents.",
+  "whenToUse": "Creating efficient Linux-compatible backups."
+},
+{
+  "id": "tar-extract",
+  "title": "Extract tar.gz archive",
+  "code": "tar -xzvf backup.tar.gz",
+  "description": "Extracts files from a tar.gz archive.",
+  "whenToUse": "Opening downloaded Linux archives or restoring backups."
+},
+{
+  "id": "show-environment-vars",
+  "title": "Show environment variables",
+  "code": "env",
+  "description": "Lists all active environment variables for the current shell session.",
+  "whenToUse": "Debugging development environments or checking configuration values."
+},
+{
+  "id": "edit-bashrc",
+  "title": "Edit shell startup file",
+  "code": "nano ~/.bashrc",
+  "description": "Opens your shell configuration file for editing aliases, environment variables, and startup commands.",
+  "whenToUse": "Customising your Termux environment."
+},
+{
+  "id": "reload-bashrc",
+  "title": "Reload shell configuration",
+  "code": "source ~/.bashrc",
+  "description": "Applies changes made to your shell configuration without reopening Termux.",
+  "whenToUse": "After editing .bashrc or adding aliases."
+},
+{
+  "id": "create-alias",
+  "title": "Create a command alias",
+  "code": "echo \"alias ll='ls -lah'\" >> ~/.bashrc",
+  "description": "Creates a shortcut command for frequently used terminal commands.",
+  "whenToUse": "Speeding up repetitive workflows."
+},
+{
+  "id": "termux-open",
+  "title": "Open file with Android app",
+  "code": "termux-open filename.pdf",
+  "description": "Opens a file using Android's default application for that file type.",
+  "whenToUse": "Viewing PDFs, images, videos, or documents from Termux."
+}, 
+{
+  "id": "termux-share",
+  "title": "Share file using Android",
+  "code": "termux-share report.pdf",
+  "description": "Opens Android's share sheet for sending files to apps, email, or cloud storage.",
+  "whenToUse": "Sharing exported reports, backups, or project files."
+},
+{
+  "id": "termux-battery",
+  "title": "Show battery information",
+  "code": "termux-battery-status",
+  "description": "Displays battery percentage, charging status, temperature, and health information.",
+  "whenToUse": "Monitoring battery status during long development sessions."
+},
+{
+  "id": "termux-clipboard-get",
+  "title": "Read Android clipboard",
+  "code": "termux-clipboard-get",
+  "description": "Prints the current contents of the Android clipboard.",
+  "whenToUse": "Quickly pasting copied text into scripts or terminal commands."
+},
+{
+  "id": "termux-clipboard-set",
+  "title": "Copy text to Android clipboard",
+  "code": "echo \"Hello World\" | termux-clipboard-set",
+  "description": "Sends text from the terminal directly to the Android clipboard.",
+  "whenToUse": "Copying URLs, SSH keys, API keys, or command output."
+},
+        {
           "id": "wc",
           "title": "Count lines / words / bytes",
           "code": "wc -l filename.js\nwc -l src/*.js   # multiple files with total",
