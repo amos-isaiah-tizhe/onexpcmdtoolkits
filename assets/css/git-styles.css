@@ -170,7 +170,8 @@ a:hover {
 /* Search container */
 .search-wrap {
   position: relative;
-
+ width: 100%;
+    max-width: 500px;
   display: flex;
   align-items: center;
 }
@@ -189,7 +190,8 @@ a:hover {
 
 /* Search input */
 .search-input {
-  width: auto;
+  width: 100%;
+    box-sizing: border-box;
 
   padding: 9px 14px 9px 34px;
 
@@ -300,20 +302,22 @@ a:hover {
     order: 1;
   }
 
-  .header-center {
+.header-center {
     order: 2;
     width: 100%;
     margin-top: 12px;
-    justify-content: stretch;
-  }
+}
 
-  .search-wrap {
+.search-wrap {
     width: 100%;
-  }
+    max-width: 100%;
+}
 
-  .search-input {
+.search-input {
     width: 100%;
-  }
+    min-width: 0;
+    box-sizing: border-box;
+}
 
   .brand-text,
   .brand-sub {
@@ -322,11 +326,12 @@ a:hover {
 
   .nav-toggle-btn {
     display: inline-flex;
+    align-items: center;
   }
 
   .header-nav {
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
     gap: 10px;
     width: 100%;
     max-height: 0;

@@ -1,6 +1,6 @@
 
 /**
- * OneXportal Toolkit — Dynamic Command Renderer
+ * OneXp Mobile Devs Command Toolkit — Dynamic Command Renderer
  * Loads command data from JSON and renders it dynamically
  */
 

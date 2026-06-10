@@ -1,4 +1,4 @@
-/* OneXportal Toolkit — Service Worker
+/* OneXp Mobile Devs Command Toolkit — Service Worker
  * Strategy:
  *  - Precache the app shell (HTML, CSS, JS, data, icons) on install
  *  - NetworkFirst for HTML navigations (fresh when online, cache when offline)
