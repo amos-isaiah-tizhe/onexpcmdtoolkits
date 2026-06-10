@@ -409,7 +409,7 @@
       <div class="hero-content">
         <span class="hero-badge">
           <span class="pulse-dot"></span>
-          211 commands · Click to copy · Built on Android
+          387 commands · Click to copy · Built on Android
         </span>
 
         <h1>
@@ -436,7 +436,8 @@
               type="search"
               autocomplete="off"
               spellcheck="false"
-              placeholder="Search 211 commands across Termux & Git…"
+              placeholder="Search 387 commands…"
+
               aria-label="Search commands across toolkits"
               aria-controls="searchResults"
             >
@@ -561,174 +562,148 @@
       });
     });
 
-    /* ---------------- Global Search ---------------- */
-    (function () {
-      const input   = document.getElementById('globalSearch');
-      const results = document.getElementById('searchResults');
-      if (!input || !results) return;
+/* ---------------- Global Search (JSON-indexed) ---------------- */
+(function () {
+  const input   = document.getElementById('globalSearch');
+  const results = document.getElementById('searchResults');
+  if (!input || !results) return;
 
-      const SOURCES = [
-        { label: 'Termux Operations', url: 'termux-ops.html' },
-        { label: 'Git for Termux & Acode', url: 'git-termux.html' },
-      ];
+  const SOURCES = [
+    { label: 'Termux Operations',     url: 'termux-ops.html', data: 'assets/data/commands-termux.json' },
+    { label: 'Git for Termux & Acode', url: 'git-termux.html', data: 'assets/data/commands-git.json'    },
+  ];
 
-      let index = null;     // [{label, url, cmd, desc, anchor}]
-      let loading = null;
-      let activeIdx = -1;
+  let index = null;
+  let loading = null;
+  let activeIdx = -1;
 
-      function escapeHtml(s) {
-        return s.replace(/[&<>"']/g, c => ({
-          '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
-        }[c]));
-      }
-      function highlight(text, q) {
-        const esc = escapeHtml(text);
-        if (!q) return esc;
-        const re = new RegExp('(' + q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
-        return esc.replace(re, '<mark>$1</mark>');
-      }
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, c => ({
+      '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+    }[c]));
+  }
+  function highlight(text, q) {
+    const esc = escapeHtml(text);
+    if (!q) return esc;
+    const re = new RegExp('(' + q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+    return esc.replace(re, '<mark>$1</mark>');
+  }
 
-      // Pull commands + nearest description from a fetched HTML doc.
-      function extract(doc, source) {
-        const items = [];
-        // Candidate command nodes: anything that looks like a command tile.
-        const nodes = doc.querySelectorAll(
-          '[data-command], [data-copy], .command, .cmd, .command-text, pre code, pre, code'
-        );
-        const seen = new Set();
-        nodes.forEach(node => {
-          const cmd = (node.getAttribute('data-command')
-                    || node.getAttribute('data-copy')
-                    || node.textContent || '').trim();
-          if (!cmd || cmd.length < 2 || cmd.length > 400) return;
-          // Skip inline <code> inside paragraphs (noise) — keep block-ish ones.
-          if (node.tagName === 'CODE' && node.parentElement &&
-              node.parentElement.tagName !== 'PRE' &&
-              !node.closest('.command, .cmd, [data-command], [data-copy]')) return;
-
-          const key = cmd.toLowerCase();
-          if (seen.has(key)) return;
-          seen.add(key);
-
-          // Find a description near the command.
-          const container = node.closest('li, article, .card, .command-card, .item, tr, .row') || node.parentElement;
-          let desc = '';
-          if (container) {
-            const d = container.querySelector('.description, .desc, .explanation, p, small, td:nth-child(2)');
-            if (d && d !== node) desc = d.textContent.trim().replace(/\s+/g, ' ').slice(0, 160);
-          }
-
-          // Best available anchor on the page.
-          let anchor = '';
-          const withId = node.closest('[id]') || (container && container.closest && container.closest('[id]'));
-          if (withId && withId.id) anchor = '#' + withId.id;
-
-          items.push({ ...source, cmd, desc, anchor });
+  // Flatten a {categories:[{commands:[...]}, ...]} JSON file into search items.
+  function flatten(json, source) {
+    const out = [];
+    const cats = (json && json.categories) || [];
+    cats.forEach(cat => {
+      (cat.commands || []).forEach(cmd => {
+        const command = (cmd.command || cmd.code || '').trim();
+        if (!command) return;
+        out.push({
+          label:  source.label,
+          url:    source.url,
+          anchor: cmd.id ? '#cmd-' + cmd.id : '',
+          cmd:    command,
+          title:  (cmd.title || '').trim(),
+          desc:   (cmd.description || cmd.whenToUse || '').trim().replace(/\s+/g, ' ').slice(0, 200)
         });
-        return items;
+      });
+    });
+    return out;
+  }
+
+  async function buildIndex() {
+    if (index) return index;
+    if (loading) return loading;
+    results.classList.add('open');
+    results.innerHTML = '<div class="search-status">Indexing commands…</div>';
+    loading = Promise.all(SOURCES.map(async src => {
+      try {
+        const res  = await fetch(src.data, { credentials: 'same-origin' });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const json = await res.json();
+        return flatten(json, src);
+      } catch (e) {
+        console.warn('Search: failed to index', src.data, e);
+        return [];
       }
+    })).then(chunks => { index = chunks.flat(); return index; });
+    return loading;
+  }
 
-      async function buildIndex() {
-        if (index) return index;
-        if (loading) return loading;
-        results.classList.add('open');
-        results.innerHTML = '<div class="search-status">Indexing commands…</div>';
-        loading = Promise.all(SOURCES.map(async src => {
-          try {
-            const res = await fetch(src.url, { credentials: 'same-origin' });
-            const html = await res.text();
-            const doc = new DOMParser().parseFromString(html, 'text/html');
-            return extract(doc, src);
-          } catch (e) {
-            console.warn('Search: failed to index', src.url, e);
-            return [];
-          }
-        })).then(chunks => {
-          index = chunks.flat();
-          return index;
-        });
-        return loading;
-      }
+  function render(q) {
+    if (!q) { results.classList.remove('open'); results.innerHTML = ''; return; }
+    if (!index) {
+      results.classList.add('open');
+      results.innerHTML = '<div class="search-status">Indexing commands…</div>';
+      return;
+    }
+    const ql = q.toLowerCase();
+    const matches = index.filter(it =>
+         it.cmd.toLowerCase().includes(ql)
+      || (it.title && it.title.toLowerCase().includes(ql))
+      || (it.desc  && it.desc.toLowerCase().includes(ql))
+    ).slice(0, 50);
 
-      function render(q) {
-        if (!q) { results.classList.remove('open'); results.innerHTML = ''; return; }
-        if (!index) {
-          results.classList.add('open');
-          results.innerHTML = '<div class="search-status">Indexing commands…</div>';
-          return;
-        }
-        const ql = q.toLowerCase();
-        const matches = index.filter(it =>
-          it.cmd.toLowerCase().includes(ql) || (it.desc && it.desc.toLowerCase().includes(ql))
-        ).slice(0, 50);
+    if (!matches.length) {
+      results.classList.add('open');
+      results.innerHTML = `<div class="search-status">No commands match “${escapeHtml(q)}”.</div>`;
+      return;
+    }
 
-        if (!matches.length) {
-          results.classList.add('open');
-          results.innerHTML = `<div class="search-status">No commands match “${escapeHtml(q)}”.</div>`;
-          return;
-        }
+    const groups = {};
+    matches.forEach(m => { (groups[m.label] ||= []).push(m); });
 
-        // Group by source.
-        const groups = {};
-        matches.forEach(m => { (groups[m.label] ||= []).push(m); });
+    let html = '';
+    for (const label of Object.keys(groups)) {
+      html += `<div class="search-group-title">${escapeHtml(label)} · ${groups[label].length}</div>`;
+      html += groups[label].map((m, i) => `
+        <a class="search-item" href="${m.url}${m.anchor}" data-idx="${i}">
+          <code>${highlight(m.cmd, q)}</code>
+          ${m.title ? `<div class="desc"><strong>${highlight(m.title, q)}</strong></div>` : ''}
+          ${m.desc  ? `<div class="desc">${highlight(m.desc, q)}</div>` : ''}
+        </a>
+      `).join('');
+    }
+    results.classList.add('open');
+    results.innerHTML = html;
+    activeIdx = -1;
+  }
 
-        let html = '';
-        for (const label of Object.keys(groups)) {
-          html += `<div class="search-group-title">${escapeHtml(label)} · ${groups[label].length}</div>`;
-          html += groups[label].map((m, i) => `
-            <a class="search-item" href="${m.url}${m.anchor}" data-idx="${i}">
-              <code>${highlight(m.cmd, q)}</code>
-              ${m.desc ? `<div class="desc">${highlight(m.desc, q)}</div>` : ''}
-            </a>
-          `).join('');
-        }
-        results.classList.add('open');
-        results.innerHTML = html;
-        activeIdx = -1;
-      }
+  let debounce;
+  input.addEventListener('input', () => {
+    const q = input.value.trim();
+    clearTimeout(debounce);
+    if (!q) { results.classList.remove('open'); return; }
+    debounce = setTimeout(async () => { await buildIndex(); render(q); }, 120);
+  });
 
-      let debounce;
-      input.addEventListener('input', () => {
-        const q = input.value.trim();
-        clearTimeout(debounce);
-        if (!q) { results.classList.remove('open'); return; }
-        debounce = setTimeout(async () => {
-          await buildIndex();
-          render(q);
-        }, 120);
-      });
+  input.addEventListener('focus', () => {
+    if (input.value.trim()) results.classList.add('open');
+  });
 
-      input.addEventListener('focus', () => {
-        if (input.value.trim()) results.classList.add('open');
-      });
+  input.addEventListener('keydown', e => {
+    const items = results.querySelectorAll('.search-item');
+    if (!items.length) return;
+    if      (e.key === 'ArrowDown') { e.preventDefault(); activeIdx = (activeIdx + 1) % items.length; }
+    else if (e.key === 'ArrowUp')   { e.preventDefault(); activeIdx = (activeIdx - 1 + items.length) % items.length; }
+    else if (e.key === 'Enter' && activeIdx >= 0) { e.preventDefault(); items[activeIdx].click(); return; }
+    else if (e.key === 'Escape')    { results.classList.remove('open'); input.blur(); return; }
+    else return;
+    items.forEach(el => el.classList.remove('active'));
+    const el = items[activeIdx];
+    if (el) { el.classList.add('active'); el.scrollIntoView({ block: 'nearest' }); }
+  });
 
-      // Keyboard navigation
-      input.addEventListener('keydown', e => {
-        const items = results.querySelectorAll('.search-item');
-        if (!items.length) return;
-        if (e.key === 'ArrowDown') { e.preventDefault(); activeIdx = (activeIdx + 1) % items.length; }
-        else if (e.key === 'ArrowUp') { e.preventDefault(); activeIdx = (activeIdx - 1 + items.length) % items.length; }
-        else if (e.key === 'Enter' && activeIdx >= 0) { e.preventDefault(); items[activeIdx].click(); return; }
-        else if (e.key === 'Escape') { results.classList.remove('open'); input.blur(); return; }
-        else return;
-        items.forEach(el => el.classList.remove('active'));
-        const el = items[activeIdx];
-        if (el) { el.classList.add('active'); el.scrollIntoView({ block: 'nearest' }); }
-      });
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.search-wrap')) results.classList.remove('open');
+  });
 
-      // Close on outside click
-      document.addEventListener('click', e => {
-        if (!e.target.closest('.search-wrap')) results.classList.remove('open');
-      });
-
-      // Global "/" shortcut to focus search
-      document.addEventListener('keydown', e => {
-        if (e.key === '/' && !/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)) {
-          e.preventDefault();
-          input.focus();
-        }
-      });
-    })();
+  document.addEventListener('keydown', e => {
+    if (e.key === '/' && !/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)) {
+      e.preventDefault();
+      input.focus();
+    }
+  });
+})();
   </script>
   <!-- Service Worker Registration for PWA functionality -->
   <script>
