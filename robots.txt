@@ -1,0 +1,77 @@
+# robots.txt for OneXp Mobile Devs Command Toolkit
+# https://onexpcmdtoolkits.netlify.app/
+
+# Default: allow all traditional search engine crawlers
+User-agent: *
+Allow: /
+Disallow: /tools/
+Disallow: /assets/data/*.bak
+Disallow: /sw.js
+Disallow: /offline.html
+
+# ---- AI / GEO (Generative Engine Optimization) crawlers ----
+# Explicitly allow well-known AI assistants & answer engines to index
+# and cite the toolkit. Remove a block if you ever want to opt-out.
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+# Sitemap
+Sitemap: https://onexpcmdtoolkits.netlify.app/sitemap.xml

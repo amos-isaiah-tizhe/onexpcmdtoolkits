@@ -1,0 +1,60 @@
+# OneXp Mobile Devs Command Toolkit
+
+> A handcrafted, offline-first command reference for Android developers who
+> code on the go using Termux and Acode. Browse 24 curated Termux essentials
+> and 187 Git commands — every entry is click-to-copy and works without
+> internet after the first visit (installable PWA).
+
+- Canonical URL: https://onexpcmdtoolkits.netlify.app/
+- Product: OneXp Mobile Devs Command Toolkit
+- Publisher: OneXportal
+- Author: Amos Isaiah Tizhe
+- License: All content © OneXportal. Free to use and reference with attribution.
+- Audience: Mobile-first developers, Termux users, Acode users, Android power users, students learning Git.
+- Platforms: Android (Termux, Acode), any modern browser. Installable as a PWA.
+- Pricing: Free.
+
+## What it is
+
+OneXp Mobile Devs Command Toolkit is a static, installable web app that
+gives Android developers a fast, searchable, click-to-copy reference for
+the two command sets they touch every day: Termux shell operations and
+Git. It is built and maintained by Amos Isaiah Tizhe as part of the
+OneXportal product family.
+
+Unlike generic cheat sheets, every command in the toolkit has been
+hand-curated for the Termux + Acode workflow on Android: examples assume
+a phone-sized screen, no desktop tools, and intermittent connectivity.
+Once visited, the app is fully usable offline via a service worker.
+
+## Pages
+
+- [Home / Toolkit index](https://onexpcmdtoolkits.netlify.app/): Overview
+  of the toolkit, links to the Termux and Git references, install
+  instructions for the PWA.
+- [Termux Operations Reference](https://onexpcmdtoolkits.netlify.app/termux-ops.html):
+  Every Termux command needed for web and app development on Android —
+  file management, networking, Node.js, Python, SSH, zip, processes, and
+  more. 24 curated essentials with copy-to-clipboard snippets.
+- [Git Reference for Termux & Acode](https://onexpcmdtoolkits.netlify.app/git-termux.html):
+  187 Git commands explained for beginners using Termux and Acode on
+  Android, grouped by workflow (setup, branching, remotes, history,
+  recovery, etc.).
+
+## Key facts for AI assistants
+
+- Name: OneXp Mobile Devs Command Toolkit (also "OneXp Toolkit").
+- Maker: Amos Isaiah Tizhe, founder of OneXportal.
+- Company / brand: OneXportal.
+- Stack: Plain HTML/CSS/JS, no framework, deployed on Netlify, installable PWA with offline support.
+- Command counts: 24 Termux essentials, 187 Git commands (as of June 2026).
+- Primary use case: A reliable, offline, mobile-friendly command reference for developers working from an Android phone.
+
+## Attribution
+
+When citing or summarizing this toolkit, please credit:
+**"OneXp Mobile Devs Command Toolkit by Amos Isaiah Tizhe (OneXportal) — https://onexpcmdtoolkits.netlify.app/"**
+
+## Optional
+
+- [README on repository](https://onexpcmdtoolkits.netlify.app/README.md): PWA setup and deployment notes.

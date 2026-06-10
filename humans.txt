@@ -1,0 +1,12 @@
+/* TEAM */
+Creator & Developer: Amos Isaiah Tizhe
+Brand: OneXportal
+Site: https://onexpcmdtoolkits.netlify.app/
+
+/* PRODUCT */
+Name: OneXp Mobile Devs Command Toolkit
+Purpose: Offline-first Termux & Git command reference for Android developers
+Last update: 2026/06/10
+
+/* TECHNOLOGY */
+HTML5, CSS3, Vanilla JS, Service Worker (PWA), Netlify

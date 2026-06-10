@@ -6,6 +6,159 @@
   <title>OneXp Mobile Devs Command Toolkit — Complete Git Reference for Termux & Acode</title>
   <meta name="description" content="158 Git commands explained for beginners using Termux and Acode on Android.">
   <meta name="author" content="Amos Isaiah Tizhe — OneXportal">
+  <link rel="canonical" href="https://onexpcmdtoolkits.netlify.app/">
+
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
+<meta name="keywords" content="Termux commands, Git commands, Android development, Acode, mobile developer toolkit, Termux cheat sheet, Git cheat sheet, OneXportal, OneXp Toolkit, PWA, offline command reference">
+<meta name="author" content="Amos Isaiah Tizhe">
+<meta name="publisher" content="OneXportal">
+<meta name="application-name" content="OneXp Mobile Devs Command Toolkit">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="OneXp Mobile Devs Command Toolkit">
+<meta property="og:title" content="OneXp Mobile Devs Command Toolkit — Termux & Git Reference for Android">
+<meta property="og:description" content="A handcrafted, offline-first command toolkit for Android developers. 24 Termux essentials and 187 Git commands — all click-to-copy, built for Termux & Acode.">
+<meta property="og:url" content="https://onexpcmdtoolkits.netlify.app/">
+<meta property="og:image" content="https://onexpcmdtoolkits.netlify.app/img/icon-512.png">
+<meta property="og:image:width" content="512">
+<meta property="og:image:height" content="512">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="OneXp Mobile Devs Command Toolkit">
+<meta name="twitter:description" content="Offline-first Termux & Git command reference for Android developers. By Amos Isaiah Tizhe (OneXportal).">
+<meta name="twitter:image" content="https://onexpcmdtoolkits.netlify.app/img/icon-512.png">
+
+<!-- JSON-LD: WebSite + SoftwareApplication + Organization + Person -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://onexpcmdtoolkits.netlify.app/#website",
+      "url": "https://onexpcmdtoolkits.netlify.app/",
+      "name": "OneXp Mobile Devs Command Toolkit",
+      "description": "Offline-first Termux & Git command reference for Android developers.",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://onexpcmdtoolkits.netlify.app/#org" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://onexpcmdtoolkits.netlify.app/#org",
+      "name": "OneXportal",
+      "url": "https://onexpcmdtoolkits.netlify.app/",
+      "logo": "https://onexpcmdtoolkits.netlify.app/img/logo.png",
+      "founder": { "@id": "https://onexpcmdtoolkits.netlify.app/#author" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://onexpcmdtoolkits.netlify.app/#author",
+      "name": "Amos Isaiah Tizhe",
+      "jobTitle": "Founder & Developer",
+      "worksFor": { "@id": "https://onexpcmdtoolkits.netlify.app/#org" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "OneXp Mobile Devs Command Toolkit",
+      "operatingSystem": "Android, Web",
+      "applicationCategory": "DeveloperApplication",
+      "url": "https://onexpcmdtoolkits.netlify.app/",
+      "author": { "@id": "https://onexpcmdtoolkits.netlify.app/#author" },
+      "publisher": { "@id": "https://onexpcmdtoolkits.netlify.app/#org" },
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "description": "A handcrafted command toolkit for Android developers: 24 Termux essentials and 187 Git commands, click-to-copy, installable as a PWA with full offline support."
+    }
+  ]
+}
+</script>
+
+
+<!-- ============================================================ -->
+<!-- 2)  termux-ops.html   ->  paste this block in <head>          -->
+<!-- ============================================================ -->
+<link rel="canonical" href="https://onexpcmdtoolkits.netlify.app/termux-ops.html">
+
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="keywords" content="Termux commands, Termux cheat sheet, Termux Android, Node.js Termux, Python Termux, SSH Termux, Termux networking, OneXportal">
+<meta name="author" content="Amos Isaiah Tizhe">
+<meta name="publisher" content="OneXportal">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="OneXp Mobile Devs Command Toolkit">
+<meta property="og:title" content="Complete Termux Operations Reference — OneXp Toolkit">
+<meta property="og:description" content="Every Termux command you need for web and app development on Android: file management, networking, Node.js, Python, SSH, zip, processes, and more.">
+<meta property="og:url" content="https://onexpcmdtoolkits.netlify.app/termux-ops.html">
+<meta property="og:image" content="https://onexpcmdtoolkits.netlify.app/img/icon-512.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Complete Termux Operations Reference">
+<meta name="twitter:description" content="Hand-curated Termux command reference for Android developers. Click-to-copy, offline-ready.">
+<meta name="twitter:image" content="https://onexpcmdtoolkits.netlify.app/img/icon-512.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Complete Termux Operations Reference",
+  "description": "Every Termux command you need for web and app development on Android: file management, networking, Node.js, Python, SSH, zip, processes, and more.",
+  "author": { "@type": "Person", "name": "Amos Isaiah Tizhe" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "OneXportal",
+    "logo": { "@type": "ImageObject", "url": "https://onexpcmdtoolkits.netlify.app/img/logo.png" }
+  },
+  "mainEntityOfPage": "https://onexpcmdtoolkits.netlify.app/termux-ops.html",
+  "inLanguage": "en",
+  "keywords": "Termux, Android, command line, developer reference",
+  "isPartOf": { "@type": "WebSite", "name": "OneXp Mobile Devs Command Toolkit", "url": "https://onexpcmdtoolkits.netlify.app/" }
+}
+</script>
+
+
+<!-- ============================================================ -->
+<!-- 3)  git-termux.html   ->  paste this block in <head>          -->
+<!-- ============================================================ -->
+<link rel="canonical" href="https://onexpcmdtoolkits.netlify.app/git-termux.html">
+
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="keywords" content="Git commands, Git cheat sheet, Git Termux, Git Acode, Git Android, Git for beginners, OneXportal, OneXp Toolkit">
+<meta name="author" content="Amos Isaiah Tizhe">
+<meta name="publisher" content="OneXportal">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="OneXp Mobile Devs Command Toolkit">
+<meta property="og:title" content="Complete Git Reference for Termux & Acode — OneXp Toolkit">
+<meta property="og:description" content="187 Git commands explained for beginners using Termux and Acode on Android. Grouped by workflow, click-to-copy, offline-ready.">
+<meta property="og:url" content="https://onexpcmdtoolkits.netlify.app/git-termux.html">
+<meta property="og:image" content="https://onexpcmdtoolkits.netlify.app/img/icon-512.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Complete Git Reference for Termux & Acode">
+<meta name="twitter:description" content="187 Git commands for Android developers using Termux and Acode. By Amos Isaiah Tizhe (OneXportal).">
+<meta name="twitter:image" content="https://onexpcmdtoolkits.netlify.app/img/icon-512.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Complete Git Reference for Termux & Acode",
+  "description": "187 Git commands explained for beginners using Termux and Acode on Android.",
+  "author": { "@type": "Person", "name": "Amos Isaiah Tizhe" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "OneXportal",
+    "logo": { "@type": "ImageObject", "url": "https://onexpcmdtoolkits.netlify.app/img/logo.png" }
+  },
+  "mainEntityOfPage": "https://onexpcmdtoolkits.netlify.app/git-termux.html",
+  "inLanguage": "en",
+  "keywords": "Git, Termux, Acode, Android, version control",
+  "isPartOf": { "@type": "WebSite", "name": "OneXp Mobile Devs Command Toolkit", "url": "https://onexpcmdtoolkits.netlify.app/" }
+}
+</script>
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png">
   <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
