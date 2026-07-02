@@ -1,5 +1,5 @@
 # robots.txt for OneXp Mobile Devs Command Toolkit
-# https://onexpcmdtoolkits.netlify.app/
+# https://devtoolkit.onexportalhq.com/
 
 # Default: allow all traditional search engine crawlers
 User-agent: *
@@ -74,4 +74,4 @@ User-agent: Diffbot
 Allow: /
 
 # Sitemap
-Sitemap: https://onexpcmdtoolkits.netlify.app/sitemap.xml
+Sitemap: https://devtoolkit.onexportalhq.com/sitemap.xml

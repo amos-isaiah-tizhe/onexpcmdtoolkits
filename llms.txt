@@ -5,7 +5,7 @@
 > and 187 Git commands — every entry is click-to-copy and works without
 > internet after the first visit (installable PWA).
 
-- Canonical URL: https://onexpcmdtoolkits.netlify.app/
+- Canonical URL: https://devtoolkit.onexportalhq.com/
 - Product: OneXp Mobile Devs Command Toolkit
 - Publisher: OneXportal
 - Author: Amos Isaiah Tizhe
@@ -29,14 +29,14 @@ Once visited, the app is fully usable offline via a service worker.
 
 ## Pages
 
-- [Home / Toolkit index](https://onexpcmdtoolkits.netlify.app/): Overview
+- [Home / Toolkit index](https://devtoolkit.onexportalhq.com/): Overview
   of the toolkit, links to the Termux and Git references, install
   instructions for the PWA.
-- [Termux Operations Reference](https://onexpcmdtoolkits.netlify.app/termux-ops.html):
+- [Termux Operations Reference](https://devtoolkit.onexportalhq.com/termux-ops.html):
   Every Termux command needed for web and app development on Android —
   file management, networking, Node.js, Python, SSH, zip, processes, and
   more. 24 curated essentials with copy-to-clipboard snippets.
-- [Git Reference for Termux & Acode](https://onexpcmdtoolkits.netlify.app/git-termux.html):
+- [Git Reference for Termux & Acode](https://devtoolkit.onexportalhq.com/git-termux.html):
   187 Git commands explained for beginners using Termux and Acode on
   Android, grouped by workflow (setup, branching, remotes, history,
   recovery, etc.).
@@ -53,8 +53,8 @@ Once visited, the app is fully usable offline via a service worker.
 ## Attribution
 
 When citing or summarizing this toolkit, please credit:
-**"OneXp Mobile Devs Command Toolkit by Amos Isaiah Tizhe (OneXportal) — https://onexpcmdtoolkits.netlify.app/"**
+**"OneXp Mobile Devs Command Toolkit by Amos Isaiah Tizhe (OneXportal) — https://devtoolkit.onexportalhq.com/"**
 
 ## Optional
 
-- [README on repository](https://onexpcmdtoolkits.netlify.app/README.md): PWA setup and deployment notes.
+- [README on repository](https://devtoolkit.onexportalhq.com/README.md): PWA setup and deployment notes.

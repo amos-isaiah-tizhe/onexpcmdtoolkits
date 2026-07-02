@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,10 +14,9 @@
   <meta name="author" content="Amos Isaiah Tizhe">
   <meta name="publisher" content="OneXportal">
 
-  <link rel="canonical" href="https://onexpcmdtoolkits.netlify.app/">
+  <link rel="canonical" href="https://devtoolkit.onexportalhq.com/">
 
-  <meta name="robots"
-    content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
   <meta name="application-name" content="OneXp Mobile Devs Command Toolkit">
 
@@ -33,8 +33,8 @@
   <meta property="og:title" content="OneXp Mobile Devs Command Toolkit — Termux & Git Command Reference for Android">
   <meta property="og:description"
     content="A handcrafted, offline-first command toolkit for Android developers. Browse Termux and Git commands with click-to-copy support and full offline access.">
-  <meta property="og:url" content="https://onexpcmdtoolkits.netlify.app/">
-  <meta property="og:image" content="https://onexpcmdtoolkits.netlify.app/img/icon-512.png">
+  <meta property="og:url" content="https://devtoolkit.onexportalhq.com/">
+  <meta property="og:image" content="https://devtoolkit.onexportalhq.com/img/icon-512.png">
   <meta property="og:image:width" content="512">
   <meta property="og:image:height" content="512">
   <meta property="og:locale" content="en_US">
@@ -44,8 +44,7 @@
   <meta name="twitter:title" content="OneXp Mobile Devs Command Toolkit">
   <meta name="twitter:description"
     content="Offline-first Termux & Git command reference for Android developers. Built for Termux and Acode.">
-  <meta name="twitter:image"
-    content="https://onexpcmdtoolkits.netlify.app/img/icon-512.png">
+  <meta name="twitter:image" content="https://devtoolkit.onexportalhq.com/img/icon-512.png">
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -54,32 +53,32 @@
     "@graph": [
       {
         "@type": "WebSite",
-        "@id": "https://onexpcmdtoolkits.netlify.app/#website",
-        "url": "https://onexpcmdtoolkits.netlify.app/",
+        "@id": "https://devtoolkit.onexportalhq.com/#website",
+        "url": "https://devtoolkit.onexportalhq.com/",
         "name": "OneXp Mobile Devs Command Toolkit",
         "description": "Offline-first Termux and Git command reference for Android developers.",
         "inLanguage": "en",
         "publisher": {
-          "@id": "https://onexpcmdtoolkits.netlify.app/#organization"
+          "@id": "https://devtoolkit.onexportalhq.com/#organization"
         }
       },
       {
         "@type": "Organization",
-        "@id": "https://onexpcmdtoolkits.netlify.app/#organization",
+        "@id": "https://devtoolkit.onexportalhq.com/#organization",
         "name": "OneXportal",
-        "url": "https://onexpcmdtoolkits.netlify.app/",
+        "url": "https://devtoolkit.onexportalhq.com/",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://onexpcmdtoolkits.netlify.app/img/logo.png"
+          "url": "https://devtoolkit.onexportalhq.com/img/logo.png"
         }
       },
       {
         "@type": "Person",
-        "@id": "https://onexpcmdtoolkits.netlify.app/#author",
+        "@id": "https://devtoolkit.onexportalhq.com/#author",
         "name": "Amos Isaiah Tizhe",
         "jobTitle": "Founder & Developer",
         "worksFor": {
-          "@id": "https://onexpcmdtoolkits.netlify.app/#organization"
+          "@id": "https://devtoolkit.onexportalhq.com/#organization"
         }
       },
       {
@@ -87,12 +86,12 @@
         "name": "OneXp Mobile Devs Command Toolkit",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Android, Web",
-        "url": "https://onexpcmdtoolkits.netlify.app/",
+        "url": "https://devtoolkit.onexportalhq.com/",
         "author": {
-          "@id": "https://onexpcmdtoolkits.netlify.app/#author"
+          "@id": "https://devtoolkit.onexportalhq.com/#author"
         },
         "publisher": {
-          "@id": "https://onexpcmdtoolkits.netlify.app/#organization"
+          "@id": "https://devtoolkit.onexportalhq.com/#organization"
         },
         "offers": {
           "@type": "Offer",
@@ -122,15 +121,18 @@
     rel="stylesheet">
 
   <!-- Font Awesome -->
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Styles -->
   <link rel="stylesheet" href="assets/css/git-styles.css">
 
   <style>
     /* Index-only styles — scoped so they don't affect other pages */
-    .home-main { max-width: 1200px; margin: 0 auto; padding: 32px 20px 64px; }
+    .home-main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
 
     .toolkit-grid {
       display: grid;
@@ -146,56 +148,96 @@
       gap: 16px;
       padding: 28px;
       border-radius: 18px;
-      background: linear-gradient(160deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
-      border: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(160deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+      border: 1px solid rgba(255, 255, 255, 0.08);
       text-decoration: none;
       color: inherit;
       transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
       overflow: hidden;
     }
+
     .toolkit-card::before {
       content: "";
-      position: absolute; inset: 0;
-      background: radial-gradient(600px circle at var(--mx,50%) var(--my,0%), rgba(0,200,150,0.12), transparent 40%);
-      opacity: 0; transition: opacity .3s ease;
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(600px circle at var(--mx, 50%) var(--my, 0%), rgba(0, 200, 150, 0.12), transparent 40%);
+      opacity: 0;
+      transition: opacity .3s ease;
       pointer-events: none;
     }
-    .toolkit-card:hover { transform: translateY(-4px); border-color: rgba(0,200,150,0.4); box-shadow: 0 18px 40px -20px rgba(0,200,150,0.35); }
-    .toolkit-card:hover::before { opacity: 1; }
+
+    .toolkit-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(0, 200, 150, 0.4);
+      box-shadow: 0 18px 40px -20px rgba(0, 200, 150, 0.35);
+    }
+
+    .toolkit-card:hover::before {
+      opacity: 1;
+    }
 
     .toolkit-icon {
-      width: 52px; height: 52px;
-      display: grid; place-items: center;
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
       border-radius: 14px;
-      background: rgba(0,200,150,0.12);
+      background: rgba(0, 200, 150, 0.12);
       color: #00c896;
       font-size: 22px;
     }
-    .toolkit-card h3 { margin: 0; font-size: 22px; font-weight: 700; }
-    .toolkit-card p  { margin: 0; opacity: .75; line-height: 1.55; font-size: 15px; }
+
+    .toolkit-card h3 {
+      margin: 0;
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .toolkit-card p {
+      margin: 0;
+      opacity: .75;
+      line-height: 1.55;
+      font-size: 15px;
+    }
 
     .toolkit-meta {
-      display: flex; flex-wrap: wrap; gap: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
       font-family: "JetBrains Mono", monospace;
       font-size: 12px;
     }
+
     .toolkit-meta span {
       padding: 4px 10px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
+
     .toolkit-cta {
       margin-top: auto;
-      display: inline-flex; align-items: center; gap: 8px;
-      font-weight: 600; color: #00c896;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      color: #00c896;
     }
-    .toolkit-cta i { transition: transform .25s ease; }
-    .toolkit-card:hover .toolkit-cta i { transform: translateX(4px); }
+
+    .toolkit-cta i {
+      transition: transform .25s ease;
+    }
+
+    .toolkit-card:hover .toolkit-cta i {
+      transform: translateX(4px);
+    }
 
     .section-title {
-      font-size: 14px; letter-spacing: .14em; text-transform: uppercase;
-      opacity: .55; margin: 40px 0 16px;
+      font-size: 14px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      opacity: .55;
+      margin: 40px 0 16px;
       font-weight: 700;
     }
 
@@ -204,119 +246,237 @@
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 18px;
     }
+
     .feature {
-      padding: 20px; border-radius: 14px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.06);
+      padding: 20px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
     }
-    .feature i { color: #00c896; font-size: 18px; margin-bottom: 10px; display: block; }
-    .feature h4 { margin: 0 0 6px; font-size: 16px; }
-    .feature p  { margin: 0; opacity: .7; font-size: 14px; line-height: 1.5; }
+
+    .feature i {
+      color: #00c896;
+      font-size: 18px;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .feature h4 {
+      margin: 0 0 6px;
+      font-size: 16px;
+    }
+
+    .feature p {
+      margin: 0;
+      opacity: .7;
+      font-size: 14px;
+      line-height: 1.5;
+    }
 
     /* ---- Search ---- */
-    .search-wrap { position: relative; margin-top: 22px; max-width: 640px; }
+    .search-wrap {
+      position: relative;
+      margin-top: 22px;
+      max-width: 640px;
+    }
+
     .search-box {
-      display: flex; align-items: center; gap: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
       padding: 12px 16px;
       border-radius: 14px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       transition: border-color .2s ease, box-shadow .2s ease;
       width: 100%;
     }
+
     .search-box:focus-within {
-      border-color: rgba(0,200,150,0.55);
-      box-shadow: 0 0 0 4px rgba(0,200,150,0.12);
+      border-color: rgba(0, 200, 150, 0.55);
+      box-shadow: 0 0 0 4px rgba(0, 200, 150, 0.12);
     }
-    .search-box i { color: #00c896; right: auto; left: 12px; font-size: 14px; position: absolute; pointer-events: none; }
+
+    .search-box i {
+      color: #00c896;
+      right: auto;
+      left: 12px;
+      font-size: 14px;
+      position: absolute;
+      pointer-events: none;
+    }
+
     .search-box input {
-      flex: 1; background: transparent; border: 0; outline: 0;
-      color: inherit; font: inherit; font-size: 15px; padding-left: 30px;
+      flex: 1;
+      background: transparent;
+      border: 0;
+      outline: 0;
+      color: inherit;
+      font: inherit;
+      font-size: 15px;
+      padding-left: 30px;
     }
 
     .search-box input::placeholder {
-  opacity: .7;
-}
-
-    .search-box kbd {
-      font-family: "JetBrains Mono", monospace; font-size: 11px;
-      padding: 2px 6px; border-radius: 6px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
       opacity: .7;
     }
+
+    .search-box kbd {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      padding: 2px 6px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      opacity: .7;
+    }
+
     .search-results {
-      position: absolute; top: calc(100% + 8px); left: 0; right: 0;
-      max-height: 60vh; overflow-y: auto;
-      background: #111; color: #fff;
-      border: 1px solid rgba(255,255,255,0.12);
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      right: 0;
+      max-height: 60vh;
+      overflow-y: auto;
+      background: #111;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.12);
       border-radius: 14px;
-      box-shadow: 0 20px 50px -20px rgba(0,0,0,0.6);
+      box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.6);
       z-index: 50;
       display: none;
     }
-    .search-results.open { display: block; }
-    .search-status {
-      padding: 14px 16px; font-size: 13px; opacity: .7;
+
+    .search-results.open {
+      display: block;
     }
+
+    .search-status {
+      padding: 14px 16px;
+      font-size: 13px;
+      opacity: .7;
+    }
+
     .search-group-title {
       padding: 10px 16px 6px;
-      font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
-      opacity: .55; font-weight: 700;
-      position: sticky; top: 0; background: #111;
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      opacity: .55;
+      font-weight: 700;
+      position: sticky;
+      top: 0;
+      background: #111;
     }
+
     .search-item {
-      display: block; padding: 10px 16px;
-      text-decoration: none; color: inherit;
-      border-top: 1px solid rgba(255,255,255,0.04);
+      display: block;
+      padding: 10px 16px;
+      text-decoration: none;
+      color: inherit;
+      border-top: 1px solid rgba(255, 255, 255, 0.04);
     }
-    .search-item:hover, .search-item.active { background: rgba(0,200,150,0.10); }
+
+    .search-item:hover,
+    .search-item.active {
+      background: rgba(0, 200, 150, 0.10);
+    }
+
     .search-item code {
-      font-family: "JetBrains Mono", monospace; font-size: 13px;
-      color: #00c896; display: block;
-      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 13px;
+      color: #00c896;
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
+
     .search-item .desc {
-      font-size: 12px; opacity: .65; margin-top: 2px;
-      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      font-size: 12px;
+      opacity: .65;
+      margin-top: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
+
     .search-item mark {
-      background: rgba(0,200,150,0.30); color: inherit;
-      padding: 0 1px; border-radius: 2px;
+      background: rgba(0, 200, 150, 0.30);
+      color: inherit;
+      padding: 0 1px;
+      border-radius: 2px;
     }
 
     /* ---- Hero layout with terminal ---- */
-    .hero-inner { display: grid; grid-template-columns: 1.05fr 1fr; gap: 48px; align-items: center; }
-    @media (max-width: 960px) { .hero-inner { grid-template-columns: 1fr; gap: 36px; } }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
 
-    .hero-visual { position: relative; margin-top: 2.5rem; }
+    @media (max-width: 960px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+    }
+
+    .hero-visual {
+      position: relative;
+      margin-top: 2.5rem;
+    }
 
     .terminal {
       position: relative;
       border-radius: 14px;
       background: #0b0f14;
-      border: 1px solid rgba(255,255,255,0.10);
-      box-shadow: 0 30px 60px -25px rgba(0,0,0,0.7),
-                  0 0 0 1px rgba(0,200,150,0.08) inset;
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      box-shadow: 0 30px 60px -25px rgba(0, 0, 0, 0.7),
+        0 0 0 1px rgba(0, 200, 150, 0.08) inset;
       overflow: hidden;
       font-family: "JetBrains Mono", monospace;
       transform: perspective(1400px) rotateY(-4deg) rotateX(2deg);
       transition: transform .4s ease;
     }
-    .terminal:hover { transform: perspective(1400px) rotateY(-2deg) rotateX(1deg); }
+
+    .terminal:hover {
+      transform: perspective(1400px) rotateY(-2deg) rotateX(1deg);
+    }
 
     .terminal-head {
-      display: flex; align-items: center; gap: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
       padding: 12px 14px;
       background: linear-gradient(180deg, #14191f, #0d1217);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
-    .terminal-dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
-    .terminal-dot.r { background: #ff5f57; }
-    .terminal-dot.y { background: #febc2e; }
-    .terminal-dot.g { background: #28c840; }
+
+    .terminal-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .terminal-dot.r {
+      background: #ff5f57;
+    }
+
+    .terminal-dot.y {
+      background: #febc2e;
+    }
+
+    .terminal-dot.g {
+      background: #28c840;
+    }
+
     .terminal-title {
-      margin-left: 10px; font-size: 12px; color: rgba(255,255,255,0.55);
+      margin-left: 10px;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.55);
       letter-spacing: .04em;
     }
 
@@ -326,48 +486,113 @@
       line-height: 1.85;
       color: #e6edf3;
       background:
-        radial-gradient(600px circle at 20% -20%, rgba(0,200,150,0.10), transparent 50%),
+        radial-gradient(600px circle at 20% -20%, rgba(0, 200, 150, 0.10), transparent 50%),
         #0b0f14;
       min-height: 260px;
     }
-    .terminal-body .line { display: block; white-space: pre-wrap; }
-    .terminal-body .prompt { color: #00c896; user-select: none; margin-right: 8px; }
-    .terminal-body .cmd { color: #e6edf3; }
-    .terminal-body .ok  { color: #4ade80; }
-    .terminal-body .tick { color: #4ade80; margin-right: 6px; }
+
+    .terminal-body .line {
+      display: block;
+      white-space: pre-wrap;
+    }
+
+    .terminal-body .prompt {
+      color: #00c896;
+      user-select: none;
+      margin-right: 8px;
+    }
+
+    .terminal-body .cmd {
+      color: #e6edf3;
+    }
+
+    .terminal-body .ok {
+      color: #4ade80;
+    }
+
+    .terminal-body .tick {
+      color: #4ade80;
+      margin-right: 6px;
+    }
+
     .terminal-body .cursor {
-      display: inline-block; width: 8px; height: 1em; vertical-align: -2px;
-      background: #00c896; margin-left: 4px;
+      display: inline-block;
+      width: 8px;
+      height: 1em;
+      vertical-align: -2px;
+      background: #00c896;
+      margin-left: 4px;
       animation: blink 1s steps(1) infinite;
     }
-    @keyframes blink { 50% { opacity: 0; } }
 
-    .terminal-line.typing { visibility: hidden; }
-    .terminal-line.typing.shown { visibility: visible; }
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+
+    .terminal-line.typing {
+      visibility: hidden;
+    }
+
+    .terminal-line.typing.shown {
+      visibility: visible;
+    }
 
     /* Floating badges */
     .float-badge {
       position: absolute;
-      display: inline-flex; align-items: center; gap: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       padding: 10px 14px;
       border-radius: 999px;
-      background: rgba(17,22,28,0.92);
+      background: rgba(17, 22, 28, 0.92);
       backdrop-filter: blur(6px);
-      border: 1px solid rgba(0,200,150,0.35);
-      color: #e6edf3; font-size: 13px; font-weight: 600;
-      box-shadow: 0 14px 30px -14px rgba(0,200,150,0.45);
+      border: 1px solid rgba(0, 200, 150, 0.35);
+      color: #e6edf3;
+      font-size: 13px;
+      font-weight: 600;
+      box-shadow: 0 14px 30px -14px rgba(0, 200, 150, 0.45);
       animation: floatY 5s ease-in-out infinite;
     }
-    .float-badge i { color: #00c896; }
-    .float-badge.tl { top: -25px; left: -18px; animation-delay: -1s; }
-    .float-badge.br { bottom: -16px; right: -14px; animation-delay: -3s; }
-    @keyframes floatY {
-      0%, 100% { transform: translateY(0); }
-      50%      { transform: translateY(-8px); }
+
+    .float-badge i {
+      color: #00c896;
     }
+
+    .float-badge.tl {
+      top: -25px;
+      left: -18px;
+      animation-delay: -1s;
+    }
+
+    .float-badge.br {
+      bottom: -16px;
+      right: -14px;
+      animation-delay: -3s;
+    }
+
+    @keyframes floatY {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
     @media (max-width: 480px) {
-      .float-badge.tl { left: 8px; }
-      .float-badge.br { right: 8px; }
+      .float-badge.tl {
+        left: 8px;
+      }
+
+      .float-badge.br {
+        right: 8px;
+      }
     }
   </style>
 </head>
@@ -400,7 +625,7 @@
         </nav>
       </div>
     </div>
-    
+
   </header>
 
   <!-- Hero -->
@@ -428,19 +653,12 @@
           <a href="git-termux.html" class="hero-btn secondary-btn">Open Git Reference</a>
         </div>
 
-<div class="search-wrap">
+        <div class="search-wrap">
           <div class="search-box" role="search">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input
-              id="globalSearch"
-              type="search"
-              autocomplete="off"
-              spellcheck="false"
-              placeholder="Search 387 commands…"
-
-              aria-label="Search commands across toolkits"
-              aria-controls="searchResults"
-            >
+            <input id="globalSearch" type="search" autocomplete="off" spellcheck="false"
+              placeholder="Search 387 commands…" aria-label="Search commands across toolkits"
+              aria-controls="searchResults">
             <kbd>/</kbd>
           </div>
           <div id="searchResults" class="search-results" role="listbox" aria-label="Search results"></div>
@@ -459,13 +677,16 @@
             <span class="terminal-title">~/projects · termux</span>
           </div>
           <div class="terminal-body" id="termBody">
-            <span class="line"><span class="prompt">$</span><span class="cmd">pkg update &amp;&amp; pkg upgrade</span></span>
+            <span class="line"><span class="prompt">$</span><span class="cmd">pkg update &amp;&amp; pkg
+                upgrade</span></span>
             <span class="line"><span class="prompt">$</span><span class="cmd">pkg install git nodejs -y</span></span>
-            <span class="line"><span class="prompt">$</span><span class="cmd">git clone git@github.com:YOUR-USERNAME/repo.git</span></span>
+            <span class="line"><span class="prompt">$</span><span class="cmd">git clone
+                git@github.com:YOUR-USERNAME/repo.git</span></span>
             <span class="line"><span class="prompt">$</span><span class="cmd">cd repo</span></span>
             <span class="line"><span class="prompt">$</span><span class="cmd">npm install</span></span>
             <span class="line"><span class="prompt">$</span><span class="cmd">npm run dev</span></span>
-            <span class="line"><span class="tick">✔</span><span class="ok">Server running on localhost:3000</span><span class="cursor"></span></span>
+            <span class="line"><span class="tick">✔</span><span class="ok">Server running on localhost:3000</span><span
+                class="cursor"></span></span>
           </div>
         </div>
 
@@ -483,7 +704,8 @@
       <a href="termux-ops.html" class="toolkit-card" data-tilt>
         <div class="toolkit-icon"><i class="fa-solid fa-terminal"></i></div>
         <h3>Termux Operations</h3>
-        <p>The essential commands every Android developer needs after installing Termux — setup, packages, storage, and daily workflows.</p>
+        <p>The essential commands every Android developer needs after installing Termux — setup, packages, storage, and
+          daily workflows.</p>
         <div class="toolkit-meta">
           <span>5 categories</span>
           <span>24 commands</span>
@@ -495,7 +717,8 @@
       <a href="git-termux.html" class="toolkit-card" data-tilt>
         <div class="toolkit-icon"><i class="fa-brands fa-git-alt"></i></div>
         <h3>Git for Termux &amp; Acode</h3>
-        <p>A complete Git reference covering setup, branching, remotes, rewriting history, recovery, and real-world workflows on Android.</p>
+        <p>A complete Git reference covering setup, branching, remotes, rewriting history, recovery, and real-world
+          workflows on Android.</p>
         <div class="toolkit-meta">
           <span>Git 2.45+</span>
           <span>187 commands</span>
@@ -536,22 +759,25 @@
   <footer class="footer">
     <div class="footer-inner">
       <div>
-        <a href="https://amos-isaiah-tizhe.onrender.com" target="_blank"><strong>OneXportal</strong></a>
+        <a href="https://onexportalhq.com/about-onexportal/" target="_blank"><strong>OneXportal</strong></a>
         · Built by Amos Isaiah Tizhe · © 2026
       </div>
       <div class="footer-links">
-        <a href="https://amos-isaiah-tizhe.onrender.com/#contact" target="_blank"><strong>Support</strong></a>
+        <a href="https://onexportalhq.com/contact-us/" target="_blank"><strong>Support</strong></a>
         <span>OneXp Mobile Devs Command Toolkit · 211 commands</span>
       </div>
     </div>
   </footer>
-<div id="install-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0d1117;color:#c9d1d9;padding:12px 16px;font-family:system-ui,sans-serif;font-size:14px;z-index:1000;border-top:1px solid #30363d;align-items:center;justify-content:space-between;gap:12px;">
-  <span>Install OneXp Mobile Devs Command Toolkit for offline access</span>
-  <div style="display:flex;gap:8px;">
-    <button id="install-btn" style="background:#8b5cf6;color:#fff;border:none;padding:8px 14px;border-radius:6px;font-size:14px;cursor:pointer;font-weight:500;">Install</button>
-    <button id="dismiss-btn" style="background:transparent;color:#8b949e;border:1px solid #30363d;padding:8px 14px;border-radius:6px;font-size:14px;cursor:pointer;">Dismiss</button>
+  <div id="install-banner"
+    style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0d1117;color:#c9d1d9;padding:12px 16px;font-family:system-ui,sans-serif;font-size:14px;z-index:1000;border-top:1px solid #30363d;align-items:center;justify-content:space-between;gap:12px;">
+    <span>Install OneXp Mobile Devs Command Toolkit for offline access</span>
+    <div style="display:flex;gap:8px;">
+      <button id="install-btn"
+        style="background:#8b5cf6;color:#fff;border:none;padding:8px 14px;border-radius:6px;font-size:14px;cursor:pointer;font-weight:500;">Install</button>
+      <button id="dismiss-btn"
+        style="background:transparent;color:#8b949e;border:1px solid #30363d;padding:8px 14px;border-radius:6px;font-size:14px;cursor:pointer;">Dismiss</button>
+    </div>
   </div>
-</div>
   <script>
     // Subtle hover-glow tracking on toolkit cards (progressive enhancement)
     document.querySelectorAll('[data-tilt]').forEach(card => {
@@ -562,190 +788,191 @@
       });
     });
 
-/* ---------------- Global Search (JSON-indexed) ---------------- */
-(function () {
-  const input   = document.getElementById('globalSearch');
-  const results = document.getElementById('searchResults');
-  if (!input || !results) return;
+    /* ---------------- Global Search (JSON-indexed) ---------------- */
+    (function () {
+      const input = document.getElementById('globalSearch');
+      const results = document.getElementById('searchResults');
+      if (!input || !results) return;
 
-  const SOURCES = [
-    { label: 'Termux Operations',     url: 'termux-ops.html', data: 'assets/data/commands-termux.json' },
-    { label: 'Git for Termux & Acode', url: 'git-termux.html', data: 'assets/data/commands-git.json'    },
-  ];
+      const SOURCES = [
+        { label: 'Termux Operations', url: 'termux-ops.html', data: 'assets/data/commands-termux.json' },
+        { label: 'Git for Termux & Acode', url: 'git-termux.html', data: 'assets/data/commands-git.json' },
+      ];
 
-  let index = null;
-  let loading = null;
-  let activeIdx = -1;
+      let index = null;
+      let loading = null;
+      let activeIdx = -1;
 
-  function escapeHtml(s) {
-    return String(s).replace(/[&<>"']/g, c => ({
-      '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
-    }[c]));
-  }
-  function highlight(text, q) {
-    const esc = escapeHtml(text);
-    if (!q) return esc;
-    const re = new RegExp('(' + q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
-    return esc.replace(re, '<mark>$1</mark>');
-  }
-
-  // Flatten a {categories:[{commands:[...]}, ...]} JSON file into search items.
-  function flatten(json, source) {
-    const out = [];
-    const cats = (json && json.categories) || [];
-    cats.forEach(cat => {
-      (cat.commands || []).forEach(cmd => {
-        const command = (cmd.command || cmd.code || '').trim();
-        if (!command) return;
-        out.push({
-          label:  source.label,
-          url:    source.url,
-          anchor: cmd.id ? '#cmd-' + cmd.id : '',
-          cmd:    command,
-          title:  (cmd.title || '').trim(),
-          desc:   (cmd.description || cmd.whenToUse || '').trim().replace(/\s+/g, ' ').slice(0, 200)
-        });
-      });
-    });
-    return out;
-  }
-
-  async function buildIndex() {
-    if (index) return index;
-    if (loading) return loading;
-    results.classList.add('open');
-    results.innerHTML = '<div class="search-status">Indexing commands…</div>';
-    loading = Promise.all(SOURCES.map(async src => {
-      try {
-        const res  = await fetch(src.data, { credentials: 'same-origin' });
-        if (!res.ok) throw new Error('HTTP ' + res.status);
-        const json = await res.json();
-        return flatten(json, src);
-      } catch (e) {
-        console.warn('Search: failed to index', src.data, e);
-        return [];
+      function escapeHtml(s) {
+        return String(s).replace(/[&<>"']/g, c => ({
+          '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+        }[c]));
       }
-    })).then(chunks => { index = chunks.flat(); return index; });
-    return loading;
-  }
+      function highlight(text, q) {
+        const esc = escapeHtml(text);
+        if (!q) return esc;
+        const re = new RegExp('(' + q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+        return esc.replace(re, '<mark>$1</mark>');
+      }
 
-  function render(q) {
-    if (!q) { results.classList.remove('open'); results.innerHTML = ''; return; }
-    if (!index) {
-      results.classList.add('open');
-      results.innerHTML = '<div class="search-status">Indexing commands…</div>';
-      return;
-    }
-    const ql = q.toLowerCase();
-    const matches = index.filter(it =>
-         it.cmd.toLowerCase().includes(ql)
-      || (it.title && it.title.toLowerCase().includes(ql))
-      || (it.desc  && it.desc.toLowerCase().includes(ql))
-    ).slice(0, 50);
+      // Flatten a {categories:[{commands:[...]}, ...]} JSON file into search items.
+      function flatten(json, source) {
+        const out = [];
+        const cats = (json && json.categories) || [];
+        cats.forEach(cat => {
+          (cat.commands || []).forEach(cmd => {
+            const command = (cmd.command || cmd.code || '').trim();
+            if (!command) return;
+            out.push({
+              label: source.label,
+              url: source.url,
+              anchor: cmd.id ? '#cmd-' + cmd.id : '',
+              cmd: command,
+              title: (cmd.title || '').trim(),
+              desc: (cmd.description || cmd.whenToUse || '').trim().replace(/\s+/g, ' ').slice(0, 200)
+            });
+          });
+        });
+        return out;
+      }
 
-    if (!matches.length) {
-      results.classList.add('open');
-      results.innerHTML = `<div class="search-status">No commands match “${escapeHtml(q)}”.</div>`;
-      return;
-    }
+      async function buildIndex() {
+        if (index) return index;
+        if (loading) return loading;
+        results.classList.add('open');
+        results.innerHTML = '<div class="search-status">Indexing commands…</div>';
+        loading = Promise.all(SOURCES.map(async src => {
+          try {
+            const res = await fetch(src.data, { credentials: 'same-origin' });
+            if (!res.ok) throw new Error('HTTP ' + res.status);
+            const json = await res.json();
+            return flatten(json, src);
+          } catch (e) {
+            console.warn('Search: failed to index', src.data, e);
+            return [];
+          }
+        })).then(chunks => { index = chunks.flat(); return index; });
+        return loading;
+      }
 
-    const groups = {};
-    matches.forEach(m => { (groups[m.label] ||= []).push(m); });
+      function render(q) {
+        if (!q) { results.classList.remove('open'); results.innerHTML = ''; return; }
+        if (!index) {
+          results.classList.add('open');
+          results.innerHTML = '<div class="search-status">Indexing commands…</div>';
+          return;
+        }
+        const ql = q.toLowerCase();
+        const matches = index.filter(it =>
+          it.cmd.toLowerCase().includes(ql)
+          || (it.title && it.title.toLowerCase().includes(ql))
+          || (it.desc && it.desc.toLowerCase().includes(ql))
+        ).slice(0, 50);
 
-    let html = '';
-    for (const label of Object.keys(groups)) {
-      html += `<div class="search-group-title">${escapeHtml(label)} · ${groups[label].length}</div>`;
-      html += groups[label].map((m, i) => `
+        if (!matches.length) {
+          results.classList.add('open');
+          results.innerHTML = `<div class="search-status">No commands match “${escapeHtml(q)}”.</div>`;
+          return;
+        }
+
+        const groups = {};
+        matches.forEach(m => { (groups[m.label] ||= []).push(m); });
+
+        let html = '';
+        for (const label of Object.keys(groups)) {
+          html += `<div class="search-group-title">${escapeHtml(label)} · ${groups[label].length}</div>`;
+          html += groups[label].map((m, i) => `
         <a class="search-item" href="${m.url}${m.anchor}" data-idx="${i}">
           <code>${highlight(m.cmd, q)}</code>
           ${m.title ? `<div class="desc"><strong>${highlight(m.title, q)}</strong></div>` : ''}
-          ${m.desc  ? `<div class="desc">${highlight(m.desc, q)}</div>` : ''}
+          ${m.desc ? `<div class="desc">${highlight(m.desc, q)}</div>` : ''}
         </a>
       `).join('');
-    }
-    results.classList.add('open');
-    results.innerHTML = html;
-    activeIdx = -1;
-  }
+        }
+        results.classList.add('open');
+        results.innerHTML = html;
+        activeIdx = -1;
+      }
 
-  let debounce;
-  input.addEventListener('input', () => {
-    const q = input.value.trim();
-    clearTimeout(debounce);
-    if (!q) { results.classList.remove('open'); return; }
-    debounce = setTimeout(async () => { await buildIndex(); render(q); }, 120);
-  });
+      let debounce;
+      input.addEventListener('input', () => {
+        const q = input.value.trim();
+        clearTimeout(debounce);
+        if (!q) { results.classList.remove('open'); return; }
+        debounce = setTimeout(async () => { await buildIndex(); render(q); }, 120);
+      });
 
-  input.addEventListener('focus', () => {
-    if (input.value.trim()) results.classList.add('open');
-  });
+      input.addEventListener('focus', () => {
+        if (input.value.trim()) results.classList.add('open');
+      });
 
-  input.addEventListener('keydown', e => {
-    const items = results.querySelectorAll('.search-item');
-    if (!items.length) return;
-    if      (e.key === 'ArrowDown') { e.preventDefault(); activeIdx = (activeIdx + 1) % items.length; }
-    else if (e.key === 'ArrowUp')   { e.preventDefault(); activeIdx = (activeIdx - 1 + items.length) % items.length; }
-    else if (e.key === 'Enter' && activeIdx >= 0) { e.preventDefault(); items[activeIdx].click(); return; }
-    else if (e.key === 'Escape')    { results.classList.remove('open'); input.blur(); return; }
-    else return;
-    items.forEach(el => el.classList.remove('active'));
-    const el = items[activeIdx];
-    if (el) { el.classList.add('active'); el.scrollIntoView({ block: 'nearest' }); }
-  });
+      input.addEventListener('keydown', e => {
+        const items = results.querySelectorAll('.search-item');
+        if (!items.length) return;
+        if (e.key === 'ArrowDown') { e.preventDefault(); activeIdx = (activeIdx + 1) % items.length; }
+        else if (e.key === 'ArrowUp') { e.preventDefault(); activeIdx = (activeIdx - 1 + items.length) % items.length; }
+        else if (e.key === 'Enter' && activeIdx >= 0) { e.preventDefault(); items[activeIdx].click(); return; }
+        else if (e.key === 'Escape') { results.classList.remove('open'); input.blur(); return; }
+        else return;
+        items.forEach(el => el.classList.remove('active'));
+        const el = items[activeIdx];
+        if (el) { el.classList.add('active'); el.scrollIntoView({ block: 'nearest' }); }
+      });
 
-  document.addEventListener('click', e => {
-    if (!e.target.closest('.search-wrap')) results.classList.remove('open');
-  });
+      document.addEventListener('click', e => {
+        if (!e.target.closest('.search-wrap')) results.classList.remove('open');
+      });
 
-  document.addEventListener('keydown', e => {
-    if (e.key === '/' && !/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)) {
-      e.preventDefault();
-      input.focus();
-    }
-  });
-})();
+      document.addEventListener('keydown', e => {
+        if (e.key === '/' && !/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)) {
+          e.preventDefault();
+          input.focus();
+        }
+      });
+    })();
   </script>
   <!-- Service Worker Registration for PWA functionality -->
   <script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function () {
-      navigator.serviceWorker.register('/sw.js').catch(console.warn);
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('/sw.js').catch(console.warn);
+      });
+    }
+  </script>
+  <!-- PWA Install Prompt Handling -->
+  <script>
+    let deferredPrompt;
+    const banner = document.getElementById('install-banner');
+    const installBtn = document.getElementById('install-btn');
+    const dismissBtn = document.getElementById('dismiss-btn');
+
+    // Don't show if already installed or previously dismissed
+    const isDismissed = localStorage.getItem('install-banner-dismissed');
+    const isStandalone = window.matchMedia('(display-mode: standalone)').matches || navigator.standalone;
+
+    if (!isDismissed && !isStandalone) {
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        banner.style.display = 'flex';
+      });
+    }
+
+    installBtn.addEventListener('click', async () => {
+      if (!deferredPrompt) return;
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      if (outcome === 'accepted') {
+        banner.style.display = 'none';
+      }
+      deferredPrompt = null;
     });
-  }
-</script>
-<!-- PWA Install Prompt Handling -->
-<script>
-let deferredPrompt;
-const banner = document.getElementById('install-banner');
-const installBtn = document.getElementById('install-btn');
-const dismissBtn = document.getElementById('dismiss-btn');
 
-// Don't show if already installed or previously dismissed
-const isDismissed = localStorage.getItem('install-banner-dismissed');
-const isStandalone = window.matchMedia('(display-mode: standalone)').matches || navigator.standalone;
-
-if (!isDismissed && !isStandalone) {
-  window.addEventListener('beforeinstallprompt', (e) => {
-    e.preventDefault();
-    deferredPrompt = e;
-    banner.style.display = 'flex';
-  });
-}
-
-installBtn.addEventListener('click', async () => {
-  if (!deferredPrompt) return;
-  deferredPrompt.prompt();
-  const { outcome } = await deferredPrompt.userChoice;
-  if (outcome === 'accepted') {
-    banner.style.display = 'none';
-  }
-  deferredPrompt = null;
-});
-
-dismissBtn.addEventListener('click', () => {
-  banner.style.display = 'none';
-  localStorage.setItem('install-banner-dismissed', '1');
-});
-</script>
+    dismissBtn.addEventListener('click', () => {
+      banner.style.display = 'none';
+      localStorage.setItem('install-banner-dismissed', '1');
+    });
+  </script>
 </body>
+
 </html>

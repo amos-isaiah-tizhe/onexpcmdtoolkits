@@ -2,19 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://onexpcmdtoolkits.netlify.app/</loc>
+    <loc>https://devtoolkit.onexportalhq.com/</loc>
     <lastmod>2026-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://onexpcmdtoolkits.netlify.app/termux-ops.html</loc>
+    <loc>https://devtoolkit.onexportalhq.com/termux-ops.html</loc>
     <lastmod>2026-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://onexpcmdtoolkits.netlify.app/git-termux.html</loc>
+    <loc>https://devtoolkit.onexportalhq.com/git-termux.html</loc>
     <lastmod>2026-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
